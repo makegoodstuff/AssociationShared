@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name         = "AssociationShared"
-    s.version      = "0.0.2"
+    s.version      = "0.0.3"
     s.summary      = "Shared Kotlin Native components for Association Project."
     s.description  = <<-DESC
                         This podspec makes it possible for an iOS client project to import result of
@@ -24,9 +24,9 @@ Pod::Spec.new do |s|
     }
     s.platform     = :ios, '8.0'
 
-    s.source       = { :git => "https://github.com/makegoodstuff/AssociationShared.git", :tag => "master" }
+    s.source       = { :git => "https://github.com/makegoodstuff/AssociationShared.git", :tag => "0.0.3" }
 
-    sp.resources = './'
+    s.resources = '.'
 
     # s.ios.vendored_frameworks = "build/bin/ios/**/*.framework"
     s.script_phase = {
@@ -37,6 +37,7 @@ Pod::Spec.new do |s|
     }
 
     s.subspec 'ChangePassword' do |sp|
+        sp.resources = 'ChangePassword'
         sp.ios.deployment_target = '8.0'
     end
   end
