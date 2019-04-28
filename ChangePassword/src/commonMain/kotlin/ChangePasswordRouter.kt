@@ -1,4 +1,4 @@
-package com.makegoodstuff.demoapp.root.changepassword
+package com.makegoodstuff.native.ChangePassword
 
 import com.uber.rib.core.native.ViewRouter
 

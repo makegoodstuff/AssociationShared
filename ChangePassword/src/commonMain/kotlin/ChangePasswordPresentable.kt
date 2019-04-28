@@ -1,4 +1,4 @@
-package com.makegoodstuff.demoapp.root.ChangePassword
+package com.makegoodstuff.native.ChangePassword
 
 import com.uber.rib.core.Bundle
 import com.uber.rib.core.Interactor

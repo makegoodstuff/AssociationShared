@@ -1,3 +1,5 @@
+package com.makegoodstuff.native.ChangePassword
+
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.uber.rib.core.native.InteractorBaseComponent
