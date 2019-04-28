@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
 
     s.source       = { :git => "https://github.com/makegoodstuff/AssociationShared.git", :tag => "0.0.3" }
 
-    s.resources = '.'
+    s.resources = '*'
 
     # s.ios.vendored_frameworks = "build/bin/ios/**/*.framework"
     s.script_phase = {
