@@ -31,8 +31,7 @@ Pod::Spec.new do |s|
     # s.ios.vendored_frameworks = "build/bin/ios/**/*.framework"
     s.script_phase = {
         :name => '[Gradle] Generate iOS Frameworks from Kotlin Native code',
-        # :script => '$SRCROOT/../../gradlew -p "$SRCROOT/.." "export" -PtargetDirectory="$PODS_BUILD_DIR"',
-        :script => '$PODS_ROOT/AssociationShared/Resources//gradlew -p "$SRCROOT/.." "export" -PtargetDirectory="$PODS_BUILD_DIR"',
+        :script => '$PODS_ROOT/AssociationShared/gradlew -p "$PODS_ROOT/AssociationShared" "export" -PtargetDirectory="$PODS_BUILD_DIR"',
         :execution_position => :before_compile
     }
 
