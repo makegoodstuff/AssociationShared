@@ -29,3 +29,11 @@ allprojects {
         maven { setUrl("https://dl.bintray.com/kotlin/kotlin-eap") }
     }
 }
+
+//import org.gradle.api.tasks.wrapper.Wrapper.DistributionType
+tasks {
+    // Configures the gradle version, here in the root buildscript.
+    val wrapper by existing {
+       version = "5.4.1"
+    }
+}
