@@ -8,12 +8,9 @@ import io.reactivex.Scheduler
 import javax.inject.Inject
 import javax.inject.Named
 
-@RibInteractor
-class ChangePasswordInteractor : Interactor<ChangePasswordInteractor.ChangePasswordPresenter, ChangePasswordRouter>() {
-
+class ChangePasswordInteractor : Interactor<ChangePasswordPresentable, ChangePasswordRouter>() {
     @Inject lateinit var listener: Listener
-    @Inject lateinit var presenter: ChangePasswordPresenter
-
+    @Inject lateinit var presenter: ChangePasswordPresentable
     @Inject @field:Named("mainThreadScheduler") lateinit var mainThreadScheduler: Scheduler
 
     override fun didBecomeActive(savedInstanceState: Bundle?) {
@@ -25,13 +22,6 @@ class ChangePasswordInteractor : Interactor<ChangePasswordInteractor.ChangePassw
                 }
     }
 
-    override fun didTapBack(): Boolean {
-        return router.handleBackNavigation()
-    }
-
-    /**
-     * Presenter interface implemented by this RIB's view.
-     */
     interface ChangePasswordPresenter {
         val didSubmitPasswordObservable: Completable
     }
