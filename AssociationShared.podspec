@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
         "Justin Kaufman"  => "jmkauf@gmail.com",
         "Ermolay Romanov" => "hello@ermolay.com"
     }
-    s.platform     = :ios, '8.0'
+    s.platform     = :ios, '10.0'
 
     s.source       = { :git => "https://github.com/makegoodstuff/AssociationShared.git", :tag => "0.0.3" }
 
@@ -35,8 +35,8 @@ Pod::Spec.new do |s|
         :execution_position => :before_compile
     }
 
-    s.subspec 'ChangePassword' do |sp|
-        sp.resources = 'ChangePassword'
-        sp.ios.deployment_target = '8.0'
+    s.subspec 'AssociationShared' do |sp|
+        sp.resources = 'AssociationShared'
+        sp.ios.deployment_target = '10.0'
     end
   end

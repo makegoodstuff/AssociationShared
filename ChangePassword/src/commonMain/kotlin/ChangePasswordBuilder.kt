@@ -1,10 +1,10 @@
 package com.makegoodstuff.native.ChangePassword
 
-import android.R // this usually needs to import the root package R, not android.R
+import android.R
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.uber.rib.core.native.InteractorBaseComponent
-import com.uber.rib.core.native.ViewBuilder
+import com.uber.rib.core.InteractorBaseComponent
+import com.uber.rib.core.ViewBuilder
 import dagger.Binds
 import dagger.BindsInstance
 import dagger.Provides
@@ -24,10 +24,8 @@ class ChangePasswordBuilder(dependency: ParentComponent) : ViewBuilder<ChangePas
         return component.ChangePasswordRouter()
     }
 
-    // So this is how you'd do it if the whole RIB were in Android/Kotlin. But instead, this needs to be
-    // platform agnostic. I'll come back to this in a sec.
     override fun inflateView(inflater: LayoutInflater, parentViewGroup: ViewGroup): ChangePasswordView? {
-        return inflater.inflate(R.layout.change_password_rib, parentViewGroup, false) as ChangePasswordView
+        return
     }
 
     interface ParentComponent {
@@ -42,5 +40,4 @@ class ChangePasswordBuilder(dependency: ParentComponent) : ViewBuilder<ChangePas
     
 
     }
-    // now we have @Retention for scope in the view code, which we would normally have in Builder?
 }
