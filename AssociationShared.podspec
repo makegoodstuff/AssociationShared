@@ -1,5 +1,5 @@
 #
-#  Be sure to run `pod spec lint LoggedOut.podspec' to ensure this is a
+#  Be sure to run `pod spec lint AssociationShared.podspec' to ensure this is a
 #  valid spec and to remove all comments including this before submitting the spec.
 #
 #  To learn more about Podspec attributes see http://docs.cocoapods.org/specification.html
@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name         = "AssociationShared"
-    s.version      = "0.0.3"
+    s.version      = "0.0.5"
     s.summary      = "Shared Kotlin Native components for Association Project."
     s.description  = <<-DESC
                         This podspec makes it possible for an iOS client project to import result of
@@ -22,9 +22,9 @@ Pod::Spec.new do |s|
         "Justin Kaufman"  => "jmkauf@gmail.com",
         "Ermolay Romanov" => "hello@ermolay.com"
     }
-    s.platform     = :ios, '8.0'
+    s.platform     = :ios, '10.0'
 
-    s.source       = { :git => "https://github.com/makegoodstuff/AssociationShared.git", :tag => "0.0.3" }
+    s.source       = { :git => "https://github.com/makegoodstuff/AssociationShared.git", :tag => "0.0.5" }
 
     s.resources = '*'
 
@@ -35,8 +35,8 @@ Pod::Spec.new do |s|
         :execution_position => :before_compile
     }
 
-    s.subspec 'ChangePassword' do |sp|
-        sp.resources = 'ChangePassword'
-        sp.ios.deployment_target = '8.0'
+    s.subspec 'AssociationShared' do |sp|
+        sp.resources = 'AssociationShared'
+        sp.ios.deployment_target = '10.0'
     end
   end
