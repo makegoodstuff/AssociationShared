@@ -69,22 +69,6 @@ kotlin {
     }
 }
 
-dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.8'
-    implementation 'com.uber.rib:rib-android:0.9.1'
-    implementation 'com.uber.autodispose:autodispose-kotlin:0.8.0'
-
-    implementation "com.google.dagger:dagger:$daggerVersion"
-    implementation "com.google.dagger:dagger-android:$daggerVersion"
-    implementation "com.google.dagger:dagger-android-support:$daggerVersion"
-    kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
-    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
-    kaptTest "com.google.dagger:dagger-android-processor:$daggerVersion"
-    kaptTest "com.google.dagger:dagger-compiler:$daggerVersion"
-}
-
-
 tasks {
     val build by existing
     val export by registering(Copy::class) {
