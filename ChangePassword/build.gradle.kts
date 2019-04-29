@@ -36,14 +36,18 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation(kotlin("stdlib-common"))
-
-                dependencies {
-                    compileOnly("javax.annotation:jsr250-api:1.0")
-                    implementation("com.uber.rib:rib-android:0.9.1")
-                    implementation("com.jakewharton.rxbinding2:rxbinding:2.0.0")
-                    implementation("com.google.dagger:dagger:2.12")
-                    implementation("com.android.support:percent:25.0.1")
-                }
+                implementation("javax.annotation:jsr250-api:1.0")
+                implementation("com.android.tools.build:gradle:3.4.0")
+                implementation("com.uber.rib:rib-android:0.9.1")
+                implementation("com.jakewharton.rxbinding2:rxbinding:2.0.0")
+                implementation("com.google.dagger:dagger:2.12")
+                implementation("com.google.dagger:dagger-compiler:2.12")
+                implementation("com.android.support:percent:25.0.1")
+                implementation("com.android.support:appcompat-v7:25.0.1")
+                implementation("com.android.support:recyclerview-v7:25.0.1")
+                implementation("com.google.android:android:2.2.1")
+                implementation("io.reactivex.rxjava2:rxandroid:2.0.1")
+                implementation("io.reactivex.rxjava2:rxjava:2.1.3")
             }
 
         }

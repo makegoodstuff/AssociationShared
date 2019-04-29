@@ -1,5 +1,6 @@
 package com.makegoodstuff.native.ChangePassword
 
+import android.R // this usually needs to import the root package R, not android.R
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.uber.rib.core.native.InteractorBaseComponent
@@ -25,7 +26,7 @@ class ChangePasswordBuilder(dependency: ParentComponent) : ViewBuilder<ChangePas
 
     // So this is how you'd do it if the whole RIB were in Android/Kotlin. But instead, this needs to be
     // platform agnostic. I'll come back to this in a sec.
-    override fun inflateView(inflater LayoutInflater, parentViewGroup: ViewGroup): ChangePasswordView? {
+    override fun inflateView(inflater: LayoutInflater, parentViewGroup: ViewGroup): ChangePasswordView? {
         return inflater.inflate(R.layout.change_password_rib, parentViewGroup, false) as ChangePasswordView
     }
 
