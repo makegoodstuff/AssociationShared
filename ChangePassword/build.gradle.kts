@@ -3,11 +3,14 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 import org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType
 
 plugins {
-    kotlin("multiplatform") version "1.3.31"
     `java-library`
+    kotlin("multiplatform") version "1.3.31"
+    kotlin("kapt") version "1.3.31"
+    kotlin("android.extensions") version "1.3.31"
 }
 
 repositories {
+    google()
     mavenCentral()
 }
 
@@ -35,21 +38,32 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
+                kapt {
+                    annotationProcessor("com.google.dagger:dagger-compiler:2.12")
+                    annotationProcessor("com.uber.rib:rib-compiler-test:0.9.1")
+                    annotationProcessor("com.uber.nullaway:nullaway:0.3.2")
+                }
+
                 implementation(kotlin("stdlib-common"))
-                implementation("javax.annotation:jsr250-api:1.0")
-                implementation("com.android.tools.build:gradle:3.4.0")
-                implementation("com.uber.rib:rib-android:0.9.1")
-                implementation("com.jakewharton.rxbinding2:rxbinding:2.0.0")
-                implementation("com.google.dagger:dagger:2.12")
-                implementation("com.google.dagger:dagger-compiler:2.12")
-                implementation("com.android.support:percent:25.0.1")
-                implementation("com.android.support:appcompat-v7:25.0.1")
-                implementation("com.android.support:recyclerview-v7:25.0.1")
+                implementation("org.jetbrains.kotlin.android:1.3.31")
+
                 implementation("com.google.android:android:2.2.1")
+                implementation("com.android.tools.build:gradle:3.4.0")
+                implementation("com.android.support.constraint:constraint-layout:1.1.3")
+                implementation("com.android.support:appcompat-v7:28.0.0")
+
+                implementation("com.uber.rib:rib-android:0.9.1")
+
+                implementation("com.google.dagger:dagger:2.12")
+
+                implementation("javax.annotation:jsr250-api:1.0")
+
+
+                implementation("com.jakewharton.rxbinding2:rxbinding:2.0.0")
+
                 implementation("io.reactivex.rxjava2:rxandroid:2.0.1")
                 implementation("io.reactivex.rxjava2:rxjava:2.1.3")
             }
-
         }
 
         val androidMain by getting {
@@ -59,13 +73,14 @@ kotlin {
         val iosMain by getting {
             dependsOn(commonMain)
         }
-//        val commonTest by getting {
-//            dependencies {
-//                implementation("junit:junit:4.12")
-//                implementation(kotlin("kotlin-test-common:${kotlin_version}"))
-//                implementation(kotlin("kotlin-test-junit${kotlin_version}"))
-//            }
-//        }
+
+        val commonTest by getting {
+            dependencies {
+                implementation("junit:junit:4.12")
+                implementation(kotlin("kotlin-test-common:${kotlin_version}"))
+                implementation(kotlin("kotlin-test-junit${kotlin_version}"))
+            }
+        }
     }
 }
 
